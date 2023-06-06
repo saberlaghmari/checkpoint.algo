@@ -1,0 +1,42 @@
+ALGORITHM sumtab
+VAR
+    sum,i,j,n: INTEGER,
+    tab1,tab2:  ARRAY_OF INTEGER[n];
+    found:BOOLEAN;
+BEGIN
+sum:=0
+FOR i FROM 0 TO n DO
+    read(tab1[i])
+END_FOR
+
+FOR j FROM 0 TO n DO
+    read(tab2[j])
+END_FOR
+FOR i FROM min TO tab1.lenght-1  DO
+    found:=false
+
+FOR j FROM 0 TO tab2.lenght-1  DO
+    IF (tab1[i]=tab2[j]) THEN
+        found:=true
+    END_IF
+END_FOR    
+END_FOR
+IF (found=true) THEN
+    sum:=sum+tab1[i]
+END_IF
+FOR j FROM 0 TO tab2.lenght-1 DO
+    found:=false
+  
+FOR i FROM 0 TO tab1.lenght-1  DO
+    IF (tab2[j]=tab1[i]) THEN
+        found:= true
+    END_IF
+END_FOR    
+END_FOR
+IF (found=false) THEN
+    sum=sam+tab2[j]
+END_IF
+
+
+write("la somme est,"sum)
+END

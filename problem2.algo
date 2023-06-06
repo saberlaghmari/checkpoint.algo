@@ -1,0 +1,47 @@
+PROCEDURE dot-product(t1,t2: ARRAY_OF FLOAT[3], var ps)
+VAR
+    ps:FLOAT=0;
+    i.INTEGER
+BEGIN
+FOR i FROM 0 t1.lenght-1  DO
+    ps=ps+ t[i]*t2[i]
+END_FOR
+END
+//algo
+ALGORITHM ortho
+VAR
+    n,i :INTEGER;
+    ps:FLOAT;
+    v1,v2 : ARRAY_OF FLOAT[3]
+BEGIN
+    write("enter the number of pairs of vectors")
+    read(n)
+    FOR i FROM 0 TO n-1  DO
+      write("enter the first vector")
+      for 1 FROM 0 To n-1 DO
+    read("v1[i]")
+    END_FOR
+
+    write ("enter the second vector")
+    FOR i FROM 0 TO n-1 DO
+        read("v2[i]")
+    END_FOR
+    ps:=dot-product(v1,v2)
+    if(ps=0) THEN
+    write("les vecteurs v1 et v2 sont orthogonaux")
+    else 
+    write("les veceurs v1 et v2 ne sont pas orthogonaux")
+    END_IF
+END 
+//function
+FUNCTION dot-product(t1,t2 : ARRAY_OF FLOAT[3];) : FLOAT
+VAR
+    ps: FLOAT:=0;
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO  t1.length-1 DO
+    ps+=t1[i]*t2[i]
+        set_instructions
+    END_FOR
+    RETURN value ;
+END
